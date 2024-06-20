@@ -57,7 +57,7 @@ if source_radio == settings.IMAGE:
             if source_img is None:
                 default_image_path = str(settings.DEFAULT_IMAGE)
                 default_image = Image.open(default_image_path)
-                st.image(default_image, caption="Normal Driver Image",
+                st.image(default_image, caption="Defalut Image",
                           use_column_width=True)
             else:
                 uploaded_image = Image.open(io.BytesIO(source_img.read()))
@@ -67,20 +67,33 @@ if source_radio == settings.IMAGE:
             st.error(f"Error loading image: {e}")
 
     with col2:
-        try:
-            default_abnormal_image_path = str(settings.DEFAULT_DETECT_IMAGE)
-            abnormal_image = Image.open(default_abnormal_image_path)
-            st.image(abnormal_image, caption="Abnormal Driver Image",
-                      use_column_width=True)
-        except Exception as e:
-            st.error(f"Error loading abnormal driver image: {e}")
+        if source_img is None:
+            default_detected_image_path = str(settings.DEFAULT_DETECT_IMAGE)
+            default_detected_image = Image.open(default_detected_image_path)
+            st.image(default_detected_image, caption='Detected Image',
+                     use_column_width=True)
+        else:
+            if st.sidebar.button('Detect Objects'):
+                res = model.predict(uploaded_image,
+                                    conf=confidence
+                                    )
+                boxes = res[0].boxes
+                res_plotted = res[0].plot()[:, :, ::-1]
+                st.image(res_plotted, caption='Detected Image',
+                         use_column_width=True)
+                try:
+                    with st.expander("Detection Results"):
+                        for box in boxes:
+                            st.write(box.data)
+                except Exception as ex:
+                    st.write("No image is uploaded yet!")
+
 
 elif source_radio == settings.VIDEO:
     helper.play_stored_video(confidence, model)
 
 elif source_radio == settings.YOUTUBE:
     helper.play_youtube_video(confidence, model)
-    # recommend_video == https://www.youtube.com/watch?v=KuTKBLipgJo
 
 else:
     st.error("Please select a valid source type!")
