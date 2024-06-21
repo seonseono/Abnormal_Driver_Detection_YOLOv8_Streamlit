@@ -17,23 +17,20 @@ SOURCES_LIST = [IMAGE, VIDEO, YOUTUBE]
 
 # Image
 IMAGES_DIR = ROOT / 'images'
-DEFAULT_IMAGE = IMAGES_DIR / '01.jpeg'
-DEFAULT_DETECT_IMAGE = IMAGES_DIR / '02.jpeg'
+DEFAULT_IMAGE = 'https://github.com/seonseono/Abnormal_Driver_Detection_YOLOv8_Streamlit/blob/main/images/01.jpg'
+DEFAULT_DETECT_IMAGE = 'https://github.com/seonseono/Abnormal_Driver_Detection_YOLOv8_Streamlit/blob/main/images/02.jpg'
 
 # Video
 VIDEO_DIR = ROOT / 'videos'
 VIDEOS_DICT = {
-    'video_1': VIDEO_DIR / 'video_1.mp4',
-    'video_2': VIDEO_DIR / 'video_2.mp4',
-    'video_3': VIDEO_DIR / 'video_3.mp4',
+    'video_1': 'https://github.com/seonseono/Abnormal_Driver_Detection_YOLOv8_Streamlit/blob/main/videos/video_1.mp4',
+    'video_2': 'https://github.com/seonseono/Abnormal_Driver_Detection_YOLOv8_Streamlit/blob/main/videos/video_2.mp4',
+    'video_3': 'https://github.com/seonseono/Abnormal_Driver_Detection_YOLOv8_Streamlit/blob/main/videos/video_3.mp4',
 }
 
 # Model
 MODEL_DIR = ROOT / 'weights'
-DETECTION_MODEL = MODEL_DIR / 'yolov8n.pt'
-# 사용자 지정 모델을 사용할 경우 아래 줄의 주석을 해제하고 파일명을 입력하세요.
-# DETECTION_MODEL = MODEL_DIR / 'my_detection_model.pt'
-
+DETECTION_MODEL = 'https://github.com/seonseono/Abnormal_Driver_Detection_YOLOv8_Streamlit/blob/main/weights/yolov8n.pt'
 
 # Debugging
 print(f"ROOT: {ROOT}")
