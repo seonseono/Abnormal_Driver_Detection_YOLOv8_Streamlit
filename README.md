@@ -14,7 +14,8 @@ YOLO 모델 학습을 위해 AI 허브의 [운전자 및 탑승자 상태 및 �
 <br/>
 
 ## Streamlit 서버의 WebApp Demo</span>
-이 링크 [abnormal-driver-detection-yolov8-webapp](https://abnormal-driver-detection-yolov8-webapp.streamlit.app/) 에서 Streamlit Web Application을 사용할 수 있습니다. 
+다음 링크 [abnormal-driver-detection-yolov8](https://abnormal-driver-detection-yolov8-webapp.streamlit.app/) 에서 Streamlit Web Application을 사용할 수 있습니다. 
+<br/>
 <img src="https://github.com/seonseono/Abnormal_Driver_Detection_YOLOv8_Streamlit/blob/main/webapp_image.jpg">
 
 <br/>
@@ -37,4 +38,5 @@ YOLO 모델 학습을 위해 AI 허브의 [운전자 및 탑승자 상태 및 �
 객체 탐지 알고리즘 [YOLOv8](<https://github.com/ultralytics/ultralytics>) 을 사용했고, [Streamlit](<https://github.com/streamlit/streamlit>) 으로 WepApp을 구현했습니다. <br/>
 Streamlit 구현은 아래 레파지토리를 참고했습니다. 
 [CodingMantras/yolov8-streamlit-detection-tracking](<https://github.com/CodingMantras/yolov8-streamlit-detection-tracking>)
-
+<br/>
+<br/>
