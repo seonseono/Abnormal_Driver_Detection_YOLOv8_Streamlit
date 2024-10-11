@@ -70,7 +70,7 @@ def stream_video_from_youtube(video_url):
         Generator yielding video frames.
     """
     try:
-        yt = YouTube(video_url)
+        yt = YouTube(video_url, use_po_token=True)
         stream = yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first()
         video_url = stream.url
         cap = cv2.VideoCapture(video_url)
