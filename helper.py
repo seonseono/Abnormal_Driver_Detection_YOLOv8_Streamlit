@@ -1,7 +1,11 @@
 from ultralytics import YOLO
 import streamlit as st
 import cv2
-from pytube import YouTube
+
+# from pytube import YouTube
+from pytubefix import YouTube
+from pytubefix.cli import on_progress
+
 import requests
 import settings
 import numpy as np
